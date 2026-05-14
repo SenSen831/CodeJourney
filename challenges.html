@@ -618,7 +618,7 @@ html, body {
         <div class="hint-icon">💡</div>
         <div class="hint-text-wrap">
           <div class="hint-label">Hint</div>
-          <span id="hint-text">Anchor tag + href attribute = hyperlink!</span>
+          <span id="hint-text"></span>
         </div>
       </div>
     </div>
@@ -707,12 +707,11 @@ const CHALLENGES = {
       { text: 'Tags like <b>&lt;h1&gt;</b>, <b>&lt;p&gt;</b>, and <b>&lt;div&gt;</b> structure your content.' },
       { text: 'Every HTML document starts with <b>&lt;!DOCTYPE html&gt;</b> and has &lt;head&gt; and &lt;body&gt; sections.' },
     ],
-    hint: 'Think about which tag defines the largest heading.',
     questions: [
-      { q: 'Which HTML tag is used for the largest heading?', opts: ['<h6>', '<head>', '<h1>', '<title>'], correct: 2 },
-      { q: 'What does HTML stand for?', opts: ['HyperText Markup Language', 'High Transfer Machine Learning', 'HyperType Meta Link', 'HyperText Machine Language'], correct: 0 },
-      { q: 'Which tag creates a paragraph?', opts: ['<para>', '<p>', '<pg>', '<text>'], correct: 1 },
-      { q: 'Where does the page title go?', opts: ['<body>', '<header>', '<head>', '<title> inside <head>'], correct: 3 },
+      { q: 'Which HTML tag is used for the largest heading?', opts: ['<h6>', '<head>', '<h1>', '<title>'], correct: 2, hint: 'Headings go from h1 (biggest) to h6 (smallest) — think of h1 as the top of the hierarchy.' },
+      { q: 'What does HTML stand for?', opts: ['HyperText Markup Language', 'High Transfer Machine Learning', 'HyperType Meta Link', 'HyperText Machine Language'], correct: 0, hint: '"Markup" is the key word — HTML marks up content with tags to give it meaning.' },
+      { q: 'Which tag creates a paragraph?', opts: ['<para>', '<p>', '<pg>', '<text>'], correct: 1, hint: 'HTML loves short tag names — paragraph is just one letter: <p>.' },
+      { q: 'Where does the page title go?', opts: ['<body>', '<header>', '<head>', '<title> inside <head>'], correct: 3, hint: 'The <title> tag lives inside <head>, not <body> — it shows in the browser tab, not on the page.' },
     ]
   },
   2: {
@@ -722,12 +721,11 @@ const CHALLENGES = {
       { text: 'Use <b>background-color</b>, <b>color</b>, and <b>border-radius</b> to style buttons beautifully.' },
       { text: 'The <b>:hover</b> pseudo-class lets you change styles when the user mouses over an element.' },
     ],
-    hint: 'border-radius rounds the corners of elements.',
     questions: [
-      { q: 'Which CSS property makes button corners round?', opts: ['corner-style', 'border-radius', 'round-corners', 'border-style'], correct: 1 },
-      { q: 'How do you change text color in CSS?', opts: ['text-color', 'font-color', 'color', 'foreground'], correct: 2 },
-      { q: 'Which pseudo-class applies styles on mouse hover?', opts: [':active', ':focus', ':hover', ':click'], correct: 2 },
-      { q: 'What unit is "px" short for?', opts: ['Proportion', 'Pixel', 'Percent', 'Point-x'], correct: 1 },
+      { q: 'Which CSS property makes button corners round?', opts: ['corner-style', 'border-radius', 'round-corners', 'border-style'], correct: 1, hint: 'Think "radius" like the radius of a circle — border-radius curves the corners.' },
+      { q: 'How do you change text color in CSS?', opts: ['text-color', 'font-color', 'color', 'foreground'], correct: 2, hint: 'CSS keeps it simple — the property for text color is just: color.' },
+      { q: 'Which pseudo-class applies styles on mouse hover?', opts: [':active', ':focus', ':hover', ':click'], correct: 2, hint: 'Pseudo-classes describe a state — :hover fires when the mouse is over the element.' },
+      { q: 'What unit is "px" short for?', opts: ['Proportion', 'Pixel', 'Percent', 'Point-x'], correct: 1, hint: 'Screens are made of tiny dots — each dot is a pixel, and px measures in those dots.' },
     ]
   },
   3: {
@@ -737,12 +735,11 @@ const CHALLENGES = {
       { text: '<b>var</b> is old and has scope issues. Avoid it in modern code.' },
       { text: 'Use <b>let</b> for values that change, and <b>const</b> for values that stay the same.' },
     ],
-    hint: '"const" stands for constant — it cannot be reassigned.',
     questions: [
-      { q: 'Which keyword should you use to declare a variable that will NOT be reassigned?', opts: ['var', 'let', 'const', 'fixed'], correct: 2 },
-      { q: 'What is the type of the value: "Hello World"?', opts: ['Number', 'Boolean', 'String', 'Object'], correct: 2 },
-      { q: 'Which of these correctly declares a number variable?', opts: ['let age = "25"', 'let age = 25', 'num age = 25', 'int age = 25'], correct: 1 },
-      { q: 'What will typeof true return?', opts: ['"number"', '"string"', '"bool"', '"boolean"'], correct: 3 },
+      { q: 'Which keyword should you use to declare a variable that will NOT be reassigned?', opts: ['var', 'let', 'const', 'fixed'], correct: 2, hint: '"const" is short for constant — once set, it cannot be changed.' },
+      { q: 'What is the type of the value: "Hello World"?', opts: ['Number', 'Boolean', 'String', 'Object'], correct: 2, hint: 'Any value wrapped in quotes — single or double — is a String in JavaScript.' },
+      { q: 'Which of these correctly declares a number variable?', opts: ['let age = "25"', 'let age = 25', 'num age = 25', 'int age = 25'], correct: 1, hint: 'In JS, no type keyword needed — just use let or const. Quotes make it a string, not a number.' },
+      { q: 'What will typeof true return?', opts: ['"number"', '"string"', '"bool"', '"boolean"'], correct: 3, hint: 'JavaScript\'s type for true/false is "boolean" — not "bool" like some other languages.' },
     ]
   },
   4: {
@@ -752,12 +749,11 @@ const CHALLENGES = {
       { text: 'The <b>href attribute</b> specifies the destination URL.' },
       { text: 'Text between opening and closing tags becomes the <b>clickable link</b>.' },
     ],
-    hint: 'Anchor tag + href attribute = hyperlink!',
     questions: [
-      { q: 'Which HTML tag and attribute create a clickable link to another page?', opts: ['<link href="...">', '<a href="...">', '<url src="...">', '<nav to="...">'], correct: 1 },
-      { q: 'Which tag is used to embed an image?', opts: ['<image>', '<picture>', '<img>', '<photo>'], correct: 2 },
-      { q: 'What does the "alt" attribute on an image provide?', opts: ['Image alignment', 'Alternative text description', 'Image altitude', 'Alt styling'], correct: 1 },
-      { q: 'How do you open a link in a new tab?', opts: ['target="_blank"', 'open="new"', 'href="_new"', 'target="tab"'], correct: 0 },
+      { q: 'Which HTML tag and attribute create a clickable link to another page?', opts: ['<link href="...">', '<a href="...">', '<url src="...">', '<nav to="...">'], correct: 1, hint: '"a" stands for anchor — pair it with href to point to any URL.' },
+      { q: 'Which tag is used to embed an image?', opts: ['<image>', '<picture>', '<img>', '<photo>'], correct: 2, hint: '<img> is a self-closing tag — it has no content between tags, just attributes like src.' },
+      { q: 'What does the "alt" attribute on an image provide?', opts: ['Image alignment', 'Alternative text description', 'Image altitude', 'Alt styling'], correct: 1, hint: 'alt = "alternative" — it shows text when the image fails to load and helps screen readers.' },
+      { q: 'How do you open a link in a new tab?', opts: ['target="_blank"', 'open="new"', 'href="_new"', 'target="tab"'], correct: 0, hint: 'Add target="_blank" to your <a> tag — "blank" means open in a new blank tab.' },
     ]
   },
   5: {
@@ -767,17 +763,56 @@ const CHALLENGES = {
       { text: 'Use <b>justify-content</b> to align items on the main axis (horizontal).' },
       { text: 'Use <b>align-items</b> to align items on the cross axis (vertical).' },
     ],
-    hint: 'Flexbox makes it easy to center elements both horizontally and vertically.',
     questions: [
-      { q: 'Which CSS property activates Flexbox on a container?', opts: ['layout: flex', 'display: flex', 'flex: true', 'mode: flex'], correct: 1 },
-      { q: 'Which property centers flex items horizontally?', opts: ['align-items', 'text-align', 'justify-content', 'flex-align'], correct: 2 },
-      { q: 'What value of flex-direction stacks items vertically?', opts: ['horizontal', 'column', 'vertical', 'stack'], correct: 1 },
-      { q: 'Which property controls space between flex items?', opts: ['margin-flex', 'gap', 'spacing', 'padding-flex'], correct: 1 },
+      { q: 'Which CSS property activates Flexbox on a container?', opts: ['layout: flex', 'display: flex', 'flex: true', 'mode: flex'], correct: 1, hint: 'Like Grid, Flexbox is activated via the display property — set it to "flex" on the parent.' },
+      { q: 'Which property centers flex items horizontally?', opts: ['align-items', 'text-align', 'justify-content', 'flex-align'], correct: 2, hint: 'justify-content controls the main (horizontal) axis — use "center" to center items.' },
+      { q: 'What value of flex-direction stacks items vertically?', opts: ['horizontal', 'column', 'vertical', 'stack'], correct: 1, hint: 'Think of a spreadsheet column — flex-direction: column stacks items top to bottom.' },
+      { q: 'Which property controls space between flex items?', opts: ['margin-flex', 'gap', 'spacing', 'padding-flex'], correct: 1, hint: 'gap is the modern, clean way to add space between flex (and grid) items — no margin hacks needed.' },
     ]
-  }
+  },
+  6: {
+    title: 'JS: Functions',
+    guide: [
+      { text: 'A <b>function</b> is a reusable block of code that performs a specific task.' },
+      { text: 'Use the <b>function</b> keyword, or write an <b>arrow function</b> with <b>=&gt;</b> for a shorter syntax.' },
+      { text: 'Functions can accept <b>parameters</b> as inputs and use <b>return</b> to send back a value.' },
+    ],
+    questions: [
+      { q: 'Which of the following correctly defines a function in JavaScript?', opts: ['func greet() {}', 'function greet() {}', 'def greet() {}', 'greet = function[] {}'], correct: 1, hint: 'JavaScript uses the full word "function" — not func or def like other languages.' },
+      { q: 'What is the arrow function equivalent of: function add(a, b) { return a + b; }', opts: ['add = (a, b) => { a + b }', 'add = (a, b) -> a + b', 'const add = (a, b) => a + b', 'const add = [a, b] => a + b'], correct: 2, hint: 'Arrow functions with a single expression can omit the curly braces — the result is returned automatically.' },
+      { q: 'What does the return keyword do inside a function?', opts: ['Stops the script entirely', 'Outputs a value to the console', 'Sends a value back to the caller', 'Declares a new variable'], correct: 2, hint: 'return hands a value back to whoever called the function — different from console.log which just prints.' },
+      { q: 'What will this output? function square(n) { return n * n; } console.log(square(4));', opts: ['4', '8', '16', 'undefined'], correct: 2, hint: '4 * 4 = 16. The function multiplies n by itself, and console.log prints the returned value.' },
+    ]
+  },
+  7: {
+    title: 'CSS: Grid Layout',
+    guide: [
+      { text: '<b>display: grid</b> turns a container into a CSS Grid, letting you define rows and columns.' },
+      { text: 'Use <b>grid-template-columns</b> to set the number and size of columns. The <b>fr</b> unit distributes available space.' },
+      { text: 'The <b>gap</b> property adds space between grid cells, and items can span multiple cells with <b>grid-column</b> / <b>grid-row</b>.' },
+    ],
+    questions: [
+      { q: 'Which CSS property activates CSS Grid on a container?', opts: ['display: grid', 'layout: grid', 'grid: true', 'mode: grid'], correct: 0, hint: 'CSS Grid, like Flexbox, is enabled on the parent using display — set it to "grid".' },
+      { q: 'What does grid-template-columns: repeat(3, 1fr) create?', opts: ['3 rows of equal height', '3 columns of equal width', '1 column repeated 3 times in height', 'A 3×3 fixed grid'], correct: 1, hint: 'repeat(3, 1fr) is shorthand for 3 columns each taking 1 fraction of the available width.' },
+      { q: 'Which unit distributes remaining space proportionally in CSS Grid?', opts: ['px', '%', 'em', 'fr'], correct: 3, hint: '"fr" stands for fraction — 1fr means "give me one share of the leftover space".' },
+      { q: 'How do you make a grid item span 2 columns?', opts: ['column-span: 2', 'grid-column: span 2', 'col-merge: 2', 'flex-span: 2'], correct: 1, hint: 'Use grid-column: span 2 on the item itself — it tells the grid to stretch across 2 column tracks.' },
+    ]
+  },
+  8: {
+    title: 'JS: DOM & Events',
+    guide: [
+      { text: 'The <b>DOM (Document Object Model)</b> is a tree-like representation of your HTML that JavaScript can read and modify.' },
+      { text: 'Use <b>document.getElementById()</b> or <b>document.querySelector()</b> to grab elements from the page.' },
+      { text: '<b>addEventListener()</b> listens for user actions like clicks, keypresses, and mouse movements, then runs a callback function.' },
+    ],
+    questions: [
+      { q: 'Which method selects an HTML element by its id attribute?', opts: ['document.getElement("id")', 'document.selectById("id")', 'document.getElementById("id")', 'document.find("#id")'], correct: 2, hint: 'The method name says it all: get-Element-By-Id. Pass the id value without the # symbol.' },
+      { q: 'How do you change the text content of a DOM element stored in variable "el"?', opts: ['el.innerHTML = "text"', 'el.textContent = "text"', 'el.value = "text"', 'el.setText("text")'], correct: 1, hint: 'textContent sets plain text safely. innerHTML works too but can render HTML — use textContent for plain strings.' },
+      { q: 'Which method is used to attach a click listener to a button?', opts: ['button.onClick(fn)', 'button.listen("click", fn)', 'button.addEventListener("click", fn)', 'button.on("click", fn)'], correct: 2, hint: 'addEventListener takes two arguments: the event name as a string ("click"), and the function to run.' },
+      { q: 'What does document.querySelector(".box") select?', opts: ['All elements with class "box"', 'An element with id "box"', 'The first element with class "box"', 'A <box> HTML tag'], correct: 2, hint: 'querySelector returns only the FIRST match. Use querySelectorAll to get every matching element.' },
+    ]
+  },
 };
-
-for (let i = 6; i <= 8; i++) CHALLENGES[i] = CHALLENGES[5];
 
 const LEVEL_META = [
   { title: 'HTML: Basics',          lang: 'html' },
@@ -792,7 +827,7 @@ const LEVEL_META = [
 const TOTAL_LEVELS = 8;
 
 let unlockedUpTo = 1;
-let completedLevels = new Set();
+let levelStars = {};   // { levelNum: 0|1|2|3 }
 let currentLevel = 1;
 let currentQ = 0;
 let selectedOpt = null;
@@ -805,19 +840,20 @@ let streak = 0;
 function renderMap() {
   const track = document.getElementById('map-track');
   track.innerHTML = '';
-  const done = completedLevels.size;
+  const done = Object.keys(levelStars).length;
   document.getElementById('global-prog-label').textContent = `${done} / ${TOTAL_LEVELS} Levels Complete`;
   document.getElementById('global-prog-fill').style.width = ((done / TOTAL_LEVELS) * 100) + '%';
 
   for (let lvl = 1; lvl <= TOTAL_LEVELS; lvl++) {
     const meta = LEVEL_META[lvl - 1];
-    const isDone    = completedLevels.has(lvl);
+    const stars   = levelStars[lvl] ?? -1;   // -1 = not yet attempted
+    const isDone    = stars >= 0;
     const isCurrent = !isDone && lvl === unlockedUpTo;
     const isLocked  = lvl > unlockedUpTo;
 
     if (lvl > 1) {
       const conn = document.createElement('div');
-      conn.className = 'connector' + (completedLevels.has(lvl - 1) ? ' active' : '');
+      conn.className = 'connector' + (levelStars[lvl - 1] >= 0 ? ' active' : '');
       track.appendChild(conn);
     }
 
@@ -837,15 +873,16 @@ function renderMap() {
     circle.textContent = isDone ? '✓' : isCurrent ? lvl : '🔒';
     node.appendChild(circle);
 
-    const stars = document.createElement('div');
-    stars.className = 'node-stars';
+    const starsEl = document.createElement('div');
+    starsEl.className = 'node-stars';
+    const earnedStars = isDone ? stars : 0;
     for (let s = 0; s < 3; s++) {
       const star = document.createElement('span');
-      star.className = 'star ' + (isDone ? 'lit' : 'dim');
+      star.className = 'star ' + (s < earnedStars ? 'lit' : 'dim');
       star.textContent = '★';
-      stars.appendChild(star);
+      starsEl.appendChild(star);
     }
-    node.appendChild(stars);
+    node.appendChild(starsEl);
 
     const label = document.createElement('div');
     label.className = 'node-label ' + (isDone ? 'done-label' : isCurrent ? 'current-label' : 'locked-label');
@@ -893,13 +930,12 @@ function loadQuestion() {
     </div>`;
   });
 
-  document.getElementById('hint-text').textContent = data.hint;
-
   const total = data.questions.length;
   document.getElementById('level-prog-fill').style.width = ((currentQ / total) * 100) + '%';
   document.getElementById('level-prog-label').textContent = `Q ${currentQ + 1} / ${total}`;
 
   const q = data.questions[currentQ];
+  document.getElementById('hint-text').textContent = q.hint || '';
   document.getElementById('problem-q').textContent = q.q;
 
   const ow = document.getElementById('options-wrap');
@@ -964,7 +1000,7 @@ function submitAnswer() {
   const term = document.getElementById('output-terminal');
   term.innerHTML = isCorrect
     ? `<span class="out-comment">// Running answer check...</span>\n<span class="out-success">✓ PASS — Answer validated</span>\n<span class="out-info">// XP +50 awarded</span>\n<span class="out-info">// Streak: ${streak} 🔥</span>`
-    : `<span class="out-comment">// Running answer check...</span>\n<span class="out-error">✗ FAIL — Incorrect answer</span>\n<span class="out-comment">// Tip: ${data.hint}</span>`;
+    : `<span class="out-comment">// Running answer check...</span>\n<span class="out-error">✗ FAIL — Incorrect answer</span>\n<span class="out-comment">// Tip: ${q.hint || ''}</span>`;
 
   updateStats();
 
@@ -995,24 +1031,57 @@ function skipQuestion() {
 }
 
 function finishLevel() {
+  const total = CHALLENGES[currentLevel].questions.length;
   const acc = totalAnswered ? Math.round((correctCount / totalAnswered) * 100) : 0;
+
+  // Star rating: 4=3★, 3=2★, 1-2=1★, 0=0★ (no unlock)
+  let earned = 0;
+  if (correctCount === total)      earned = 3;
+  else if (correctCount === 3)     earned = 2;
+  else if (correctCount >= 1)      earned = 1;
+  else                             earned = 0;
+
+  const starStr = '★'.repeat(earned) + '☆'.repeat(3 - earned);
+  const canUnlock = earned >= 1;
+
   document.getElementById('output-terminal').innerHTML =
-    `<span class="out-success">🏆 LEVEL COMPLETE!</span>\n<span class="out-info">// Score: ${correctCount}/${CHALLENGES[currentLevel].questions.length}</span>\n<span class="out-info">// Accuracy: ${acc}%</span>\n<span class="out-info">// Total XP: +${correctCount * 50}</span>`;
+    `<span class="out-success">🏆 LEVEL ${canUnlock ? 'COMPLETE' : 'FAILED'}!</span>\n` +
+    `<span class="out-info">// Score: ${correctCount}/${total}</span>\n` +
+    `<span class="out-info">// Accuracy: ${acc}%</span>\n` +
+    `<span class="out-info">// Stars earned: ${starStr}</span>\n` +
+    `<span class="out-info">// Total XP: +${correctCount * 50}</span>` +
+    (!canUnlock ? `\n<span class="out-error">// Get at least 1 correct to unlock next stage!</span>` : '');
 
   document.getElementById('achievement').classList.add('show');
   document.getElementById('btn-next').classList.remove('show');
   document.getElementById('btn-submit').style.display = 'none';
   updateStats();
 
-  completedLevels.add(currentLevel);
-  if (currentLevel < TOTAL_LEVELS) unlockedUpTo = currentLevel + 1;
+  // Keep best star score if replaying
+  const prev = levelStars[currentLevel] ?? -1;
+  if (earned > prev) levelStars[currentLevel] = earned;
+
+  if (canUnlock && currentLevel < TOTAL_LEVELS) {
+    unlockedUpTo = Math.max(unlockedUpTo, currentLevel + 1);
+  }
 
   setTimeout(() => {
     showMap();
     const t = document.getElementById('unlock-toast');
-    document.getElementById('toast-text').textContent = currentLevel < TOTAL_LEVELS
-      ? `Level ${currentLevel} complete! Level ${currentLevel + 1} unlocked 🔓`
-      : `All levels complete! You're a CodeQuest master! 🏆`;
+    if (!canUnlock) {
+      document.getElementById('toast-text').textContent = `0 correct — get at least 1 right to unlock the next stage! 🔒`;
+      t.style.borderColor = 'var(--red)';
+      t.style.boxShadow = '0 0 24px rgba(255,23,68,0.3)';
+    } else if (currentLevel >= TOTAL_LEVELS) {
+      document.getElementById('toast-text').textContent = `All levels complete! You're a CodeQuest master! 🏆`;
+      t.style.borderColor = 'var(--accent)';
+      t.style.boxShadow = '0 0 24px rgba(0,212,255,0.3)';
+    } else {
+      document.getElementById('toast-text').textContent =
+        `Level ${currentLevel} complete! ${starStr} — Level ${currentLevel + 1} unlocked 🔓`;
+      t.style.borderColor = 'var(--accent)';
+      t.style.boxShadow = '0 0 24px rgba(0,212,255,0.3)';
+    }
     t.style.display = 'flex';
     setTimeout(() => { t.style.display = 'none'; }, 5000);
   }, 2800);
