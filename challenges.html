@@ -637,9 +637,14 @@ let sessionStreak = 0; // running streak for this session
 
 function syncFromProgress() {
   levelStarsLocal = { ...progress.levelStars };
-  unlockedUpTo = Math.max(1, ...Object.keys(levelStarsLocal).map(Number), 1);
-  if (Object.keys(levelStarsLocal).length < TOTAL_LEVELS) unlockedUpTo++;
-  unlockedUpTo = Math.min(unlockedUpTo, TOTAL_LEVELS);
+  const completedLevels = Object.keys(levelStarsLocal).map(Number);
+  if (completedLevels.length === 0) {
+    // Nothing completed yet — only Level 1 is playable
+    unlockedUpTo = 1;
+  } else {
+    // Unlock one beyond the highest completed level
+    unlockedUpTo = Math.min(Math.max(...completedLevels) + 1, TOTAL_LEVELS);
+  }
 }
 
 function renderMap() {
